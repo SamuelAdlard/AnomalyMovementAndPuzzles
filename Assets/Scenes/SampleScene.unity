@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Controller: {fileID: 208869333}
-  Gravity: -10
+  Gravity: -20
 --- !u!114 &208869331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Controller: {fileID: 208869333}
-  Speed: 12
+  Speed: 6
 --- !u!143 &208869333
 CharacterController:
   m_ObjectHideFlags: 0
