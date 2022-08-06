@@ -5,5 +5,7 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     public string type = "TEST";
+    public bool inCart = false;
+    public bool carried = false;
     
 }

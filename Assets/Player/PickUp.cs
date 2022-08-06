@@ -24,7 +24,7 @@ public class PickUp : MonoBehaviour
         RaycastHit hit;
         if (Input.GetMouseButtonDown(0) && Physics.Raycast(transform.position,transform.forward, out hit, pickUpRange) && !holding && !justheld)
         {
-            print("hit");
+            print(hit.transform.name);
             if (hit.transform.GetComponent<Item>())
             {
                 print("hit object");
