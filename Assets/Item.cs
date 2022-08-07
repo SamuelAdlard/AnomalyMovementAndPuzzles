@@ -13,6 +13,15 @@ public class Item : MonoBehaviour
         rb = transform.GetComponent<Rigidbody>();
     }
 
+    public void PickedUp()
+    {
+        if (carried)
+        {
+            inCart = false;
+            transform.parent = null;
+            rb.isKinematic = false;
+        }
+    }
 
     private void OnCollisionEnter(Collision collision)
     {

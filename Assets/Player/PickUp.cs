@@ -40,6 +40,7 @@ public class PickUp : MonoBehaviour
                 item = hit.transform.GetComponent<Rigidbody>();
                 holding = true;
                 item.GetComponent<Item>().carried = true;
+                item.GetComponent<Item>().PickedUp();
             }
 
             
