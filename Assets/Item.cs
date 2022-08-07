@@ -7,5 +7,23 @@ public class Item : MonoBehaviour
     public string type = "TEST";
     public bool inCart = false;
     public bool carried = false;
-    
+    Rigidbody rb;
+    private void Start()
+    {
+        rb = transform.GetComponent<Rigidbody>();
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        print(collision.gameObject.name);
+        if (collision.gameObject.CompareTag("Platform") && !carried)
+        {
+            inCart = true;
+            rb.isKinematic = true;
+            transform.parent = collision.transform;
+        }
+    }
+
+
 }
