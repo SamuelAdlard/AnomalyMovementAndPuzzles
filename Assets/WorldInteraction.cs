@@ -7,7 +7,8 @@ using TMPro;
 public class WorldInteraction : MonoBehaviour
 {
     public TextMeshProUGUI PressF;
-    
+    public TextMeshProUGUI name;
+    public int corruptionLevel = 1;
     bool startedConversation = false;
     int index = 0;
     void Update()
@@ -22,12 +23,14 @@ public class WorldInteraction : MonoBehaviour
             {
                 if (interactedObject.tag == "InteractableObject")
                 {
+                    name.text = interactedObject.GetComponent<NPC>().name;
+
                     PressF.text = "Press F";
                     if (Input.GetKey(KeyCode.F))
                     {
 
                         startedConversation = true;
-
+                        
                     }
                 }
                 else
@@ -41,6 +44,7 @@ public class WorldInteraction : MonoBehaviour
         else if(!startedConversation)
         {
             PressF.text = "";
+            name.text = "";
         }
         else
         {
@@ -69,10 +73,10 @@ public class WorldInteraction : MonoBehaviour
 
     bool Talk(int indexForConversation, RaycastHit hit)
     {
-        //index < hit.transform.GetComponent<NPC>().npcConversation.Length
-        if (true)
+        
+        if (index < hit.transform.GetComponent<NPC>().PickConversation(corruptionLevel).Length)
         {
-            //PressF.text = hit.transform.GetComponent<NPC>().npcConversation[index];
+            PressF.text = hit.transform.GetComponent<NPC>().PickConversation(corruptionLevel)[index];
             print(index);
             return true;
         }
