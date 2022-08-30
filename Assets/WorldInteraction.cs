@@ -6,7 +6,8 @@ using TMPro;
 
 public class WorldInteraction : MonoBehaviour
 {
-    public TextMeshProUGUI PressF;
+    public TextMeshProUGUI NPCText;
+    public TextMeshProUGUI PlayerResponse;
     public TextMeshProUGUI name;
     public int corruptionLevel = 1;
     bool startedConversation = false;
@@ -16,7 +17,7 @@ public class WorldInteraction : MonoBehaviour
         RaycastHit interactionInfo;        
 
         
-        if (Physics.Raycast(transform.position, transform.forward, out interactionInfo, 2f)  )
+        if (Physics.Raycast(transform.position, transform.forward, out interactionInfo, 2f))
         {
             GameObject interactedObject = interactionInfo.collider.gameObject;
             if (!startedConversation)
@@ -25,7 +26,8 @@ public class WorldInteraction : MonoBehaviour
                 {
                     name.text = interactedObject.GetComponent<NPC>().name;
 
-                    PressF.text = "Press F";
+                    NPCText.text = "Press F";
+                    PlayerResponse.text = "";
                     if (Input.GetKey(KeyCode.F))
                     {
 
@@ -35,7 +37,8 @@ public class WorldInteraction : MonoBehaviour
                 }
                 else
                 {
-                    PressF.text = "";
+                    NPCText.text = "";
+                    PlayerResponse.text = "";
                 }
 
             }
@@ -43,7 +46,8 @@ public class WorldInteraction : MonoBehaviour
         }
         else if(!startedConversation)
         {
-            PressF.text = "";
+            NPCText.text = "";
+            PlayerResponse.text = "";
             name.text = "";
         }
         else
@@ -74,15 +78,19 @@ public class WorldInteraction : MonoBehaviour
     bool Talk(int indexForConversation, RaycastHit hit)
     {
         
-        if (index < hit.transform.GetComponent<NPC>().PickConversation(corruptionLevel).Length)
+        if (index < hit.transform.GetComponent<NPC>().conversations[corruptionLevel].NPCSentence.Count)
         {
-            PressF.text = hit.transform.GetComponent<NPC>().PickConversation(corruptionLevel)[index];
+            
+            NPCText.text = hit.transform.GetComponent<NPC>().conversations[corruptionLevel].NPCSentence[index];
+            PlayerResponse.text = hit.transform.GetComponent<NPC>().conversations[corruptionLevel].playerSentence[index];
             print(index);
             return true;
         }
         else
         {
             print("End");
+            PlayerResponse.text = "";
+            
             return false;
         }
         
