@@ -10,6 +10,7 @@ TagManager:
   - NPC
   - InteractableObject
   - TorchRefuel
+  - Axe
   layers:
   - Default
   - TransparentFX
