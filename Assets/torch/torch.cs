@@ -55,5 +55,13 @@ public class torch : MonoBehaviour
         {
             FuelTime += 1;
         }
+
+        if (other.CompareTag("NoLight"))
+        {
+         
+            IsOn = false;
+            
+        }
     }
+
 }

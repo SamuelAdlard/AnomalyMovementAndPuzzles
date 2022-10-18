@@ -11,6 +11,7 @@ TagManager:
   - InteractableObject
   - TorchRefuel
   - Axe
+  - NoLight
   layers:
   - Default
   - TransparentFX
