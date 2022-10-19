@@ -25,7 +25,7 @@ public class Item : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        print(collision.gameObject.name);
+        //print(collision.gameObject.name);
         if (collision.gameObject.CompareTag("Platform") && !carried)
         {
             inCart = true;
