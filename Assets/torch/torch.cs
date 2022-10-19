@@ -55,5 +55,13 @@ public class torch : MonoBehaviour
         {
             FuelTime += 1;
         }
+        if (other.CompareTag("DarkSpace"))
+        {
+            FuelTime = 0;
+        }
+        if(other.CompareTag("ExitDark"))
+        {
+            FuelTime = 600;
+        }
     }
 }

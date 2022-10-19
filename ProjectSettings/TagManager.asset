@@ -11,6 +11,8 @@ TagManager:
   - InteractableObject
   - TorchRefuel
   - Axe
+  - DarkSpace
+  - ExitDark
   layers:
   - Default
   - TransparentFX
