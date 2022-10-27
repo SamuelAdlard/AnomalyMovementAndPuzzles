@@ -20,46 +20,53 @@ public class TestPinpad : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
+        //bool hitag1 = false;
         print(other.tag);
-        if (other.CompareTag("1"))
+        if (other.CompareTag("Puzzle"))
         {
-            if (PIN[pinpad] == 1)
-            {
-                pinpad++;
-                print(PIN[pinpad]);
-            }
-            else
-            {
-                pinpad = 0;
-                print("fail");
-            }
-            
-        }
-        else if (other.CompareTag("2"))
-        {
-           if (PIN[pinpad] == 2)
-            {
-                pinpad++;
+            string num = other.gameObject.name;
 
-            }
-            else
+            if (num == "1")
             {
-                pinpad = 0;
-                print("fail");
+
+                if (PIN[pinpad] == 1)
+                {
+                    // hitag1 = true;
+                    pinpad++;
+                    print(PIN[pinpad]);
+                }
+                else
+                {
+                    pinpad = 0;
+                    print("fail");
+                }
             }
-        }
-        else if (other.CompareTag("3"))
-        {
-            if (PIN[pinpad] == 3)
+
+            else if (num == "2")
             {
-                pinpad++;
-                print("you have solved the puzzle!");
+                if (PIN[pinpad] == 2)
+                {
+                    pinpad++;
+
+                }
+                else
+                {
+                    pinpad = 0;
+                    print("fail");
+                }
             }
-            else
+            else if (num == "3")
             {
-                pinpad = 0;
-                print("fail");
+                if (PIN[pinpad] == 3)
+                {
+                    pinpad++;
+                    print("you have solved the puzzle!");
+                }
+                else
+                {
+                    pinpad = 0;
+                    print("fail");
+                }
             }
         }
     }

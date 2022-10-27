@@ -16,7 +16,7 @@ public class PlayerGravity : MonoBehaviour
         
         if (grounded)
         {
-            Velocity.y = 0;
+            //Velocity.y = 0;
         }
 
         if (Input.GetKey(KeyCode.Space) && grounded)
@@ -28,19 +28,5 @@ public class PlayerGravity : MonoBehaviour
         Controller.Move(Velocity * Time.deltaTime);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Ground"))
-        {
-            grounded = true;
-        }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Ground"))
-        {
-            grounded = false;
-        }
-    }
 }

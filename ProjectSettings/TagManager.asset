@@ -13,9 +13,7 @@ TagManager:
   - Axe
   - DarkSpace
   - ExitDark
-  - 1
-  - 2
-  - 3
+  - Puzzle
   layers:
   - Default
   - TransparentFX
