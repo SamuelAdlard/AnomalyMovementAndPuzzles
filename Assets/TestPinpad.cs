@@ -25,49 +25,25 @@ public class TestPinpad : MonoBehaviour
         if (other.CompareTag("Puzzle"))
         {
             string num = other.gameObject.name;
+            int actaulNum = int.Parse(num);
 
-            if (num == "1")
+            if (actaulNum == PIN[pinpad])
             {
-
-                if (PIN[pinpad] == 1)
+               
+                pinpad++;
+                print("correct");
+                if (PIN.Count == pinpad)
                 {
-                    // hitag1 = true;
-                    pinpad++;
-                    print(PIN[pinpad]);
-                }
-                else
-                {
+                    print("Puzzle Solved!");
                     pinpad = 0;
-                    print("fail");
                 }
             }
-
-            else if (num == "2")
+            else
             {
-                if (PIN[pinpad] == 2)
-                {
-                    pinpad++;
+                pinpad = 0;
+                print("fail");
+            }
 
-                }
-                else
-                {
-                    pinpad = 0;
-                    print("fail");
-                }
-            }
-            else if (num == "3")
-            {
-                if (PIN[pinpad] == 3)
-                {
-                    pinpad++;
-                    print("you have solved the puzzle!");
-                }
-                else
-                {
-                    pinpad = 0;
-                    print("fail");
-                }
-            }
         }
     }
 }

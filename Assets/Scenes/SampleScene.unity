@@ -9709,7 +9709,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7609207061080992476, guid: 3c8f2b613d4b4d04392effe24361e9e7, type: 3}
       propertyPath: PIN.Array.size
-      value: 3
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7609207061080992476, guid: 3c8f2b613d4b4d04392effe24361e9e7, type: 3}
       propertyPath: PIN.Array.data[0]
@@ -9725,7 +9725,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7609207061080992476, guid: 3c8f2b613d4b4d04392effe24361e9e7, type: 3}
       propertyPath: PIN.Array.data[3]
-      value: 1
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609207061080992476, guid: 3c8f2b613d4b4d04392effe24361e9e7, type: 3}
+      propertyPath: PIN.Array.data[4]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609207061080992476, guid: 3c8f2b613d4b4d04392effe24361e9e7, type: 3}
+      propertyPath: PIN.Array.data[5]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609207061080992476, guid: 3c8f2b613d4b4d04392effe24361e9e7, type: 3}
+      propertyPath: PIN.Array.data[6]
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609207061080992476, guid: 3c8f2b613d4b4d04392effe24361e9e7, type: 3}
+      propertyPath: PIN.Array.data[7]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609207061080992476, guid: 3c8f2b613d4b4d04392effe24361e9e7, type: 3}
+      propertyPath: PIN.Array.data[8]
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8798385354146945968, guid: 3c8f2b613d4b4d04392effe24361e9e7, type: 3}
       propertyPath: grounded
